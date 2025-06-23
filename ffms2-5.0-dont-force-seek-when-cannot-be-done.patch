@@ -1,0 +1,15 @@
+diff -rupN ffms2-5.0.old/src/core/videosource.cpp ffms2-5.0/src/core/videosource.cpp
+--- ffms2-5.0.old/src/core/videosource.cpp	2024-05-28 16:52:48.000000000 +0200
++++ ffms2-5.0/src/core/videosource.cpp	2025-06-01 23:28:00.187368309 +0200
+@@ -408,6 +408,11 @@ FFMS_VideoSource::FFMS_VideoSource(const
+             }
+         }
+ 
++        // If we are in linear no-rewind mode, don't attempt to seek during init.
++        // Bypass the INITIALIZE_SOURCE stage.
++        if (SeekMode < 0)
++			Stage = DecodeStage::INITIALIZE;
++
+         // Cannot "output" without doing all other initialization
+         // This is the additional mess required for seekmode=-1 to work in a reasonable way
+         OutputFrame(DecodeFrame);
