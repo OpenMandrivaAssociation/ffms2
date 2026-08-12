@@ -5,7 +5,7 @@
 Summary:		Wrapper library around libffmpeg
 Name:		ffms2
 Version:		5.0
-Release:	6
+Release:	7
 License:		MIT
 Group:		Video
 Url:		https://github.com/FFMS/ffms2/
@@ -16,6 +16,7 @@ BuildRequires:		autoconf
 BuildRequires:		automake
 BuildRequires:		libtool
 BuildRequires:		slibtool
+BuildRequires:		make
 BuildRequires:		pkgconfig(libavcodec)
 BuildRequires:		pkgconfig(libavformat)
 BuildRequires:		pkgconfig(libavutil)
@@ -76,6 +77,7 @@ sed -i 's/\r$//' COPYING
 %build
 ./autogen.sh
 %configure \
+	--disable-dependency-tracking \
 	--docdir=%{_docdir}/lib%{name}-devel \
 	--enable-shared \
 	--disable-static
