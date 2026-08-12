@@ -5,7 +5,7 @@
 Summary:		Wrapper library around libffmpeg
 Name:		ffms2
 Version:		5.0
-Release:		3
+Release:		4
 License:		MIT
 Group:		Video
 Url:		https://github.com/FFMS/ffms2/
