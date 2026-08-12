@@ -5,13 +5,15 @@
 Summary:		Wrapper library around libffmpeg
 Name:		ffms2
 Version:		5.0
-Release:		4
+Release:	5
 License:		MIT
 Group:		Video
 Url:		https://github.com/FFMS/ffms2/
 Source0:	https://github.com/FFMS/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 Patch0:		ffms2-5.0-dont-force-seek-when-cannot-be-done.patch
 Patch1:		ffms2-5.0-require-ffmpeg-71.patch
+BuildRequires:		autoconf
+BuildRequires:		automake
 BuildRequires:		libtool
 BuildRequires:		pkgconfig(libavcodec)
 BuildRequires:		pkgconfig(libavformat)
